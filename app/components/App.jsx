@@ -6,7 +6,7 @@ import Classes from './Classes';
 import SubjectActions from '../actions/SubjectActions';
 import SubjectStore from '../stores/SubjectStore';
 import Subjects from './Subjects';
-import Timetable from '/.Timetable';
+import Timetable from './Timetable';
 
 export default class App extends React.Component {
   render() {
@@ -31,6 +31,17 @@ export default class App extends React.Component {
               subjects: () => SubjectStore.getState().subjects
             }}>
             <Subjects onEdit={this.editSubject} onDelete={this.deleteSubject} />
+          </AltContainer>
+        </div>
+
+        <div>
+          <AltContainer
+            stores={[SubjectStore, ClassStore]}
+            inject={{
+              subjects: () => SubjectStore.getState().subjects,
+              classes: () => ClassStore.getState().classes
+            }}>
+            <Timetable onEdit={this.editClass} onDelete={this.deleteClass}/>
           </AltContainer>
         </div>
       </div>
