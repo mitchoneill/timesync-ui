@@ -5,11 +5,11 @@ class Classes extends React.Component {
   render() {
     const classes = this.props.classes;
 
-    return <div className="classes">{classes.map(this.renderClass)}</div>;
+    return <div className='classes'>{classes.map(this.renderClass)}</div>;
   }
   renderClass = (group) => {
     return (
-      <Class className="class" name={group.name} />
+      <Class className='class' key={group.id} name={group.name} />
     );
   }
 }
@@ -19,6 +19,5 @@ Classes.propTypes = {
 Classes.defaultProps = {
   classes: []
 };
-
 
 export default Classes;

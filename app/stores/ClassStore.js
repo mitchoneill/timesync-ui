@@ -29,8 +29,8 @@ class ClassStore{
   get(ids) {
     return (ids || []).map(
       (id) => this.classes.filter((group))
-    )
+    );
   }
 }
 
-export default alt.createStore(ClassStore, 'Classstore')
+export default alt.createStore(ClassStore, 'Classstore');

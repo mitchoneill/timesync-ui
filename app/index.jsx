@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import alt from './libs/alt';
-import App from './components/App.jsx'
+import App from './components/App.jsx';
 
 main();
 
