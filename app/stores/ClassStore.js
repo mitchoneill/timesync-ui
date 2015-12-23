@@ -26,6 +26,14 @@ class ClassStore{
       classes: this.classes.filter((group) => group.id !== id)
     });
   }
+  update({id, name}) {
+    const classes = this.classes.map((group) => {
+      if (group.id === id) {
+        group.name = name;
+      }
+      return classes;
+    });
+  }
   get(ids) {
     return (ids || []).map(
       (id) => this.classes.filter((group))

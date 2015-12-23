@@ -6,7 +6,7 @@ class Class extends React.Component {
     const key = this.props.key;
 
     return (
-      <li value={key}>{name}</li>
+      <li value={key}>{this.props.children}</li>
     );
   }
 }

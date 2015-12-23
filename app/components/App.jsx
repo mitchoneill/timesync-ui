@@ -14,12 +14,18 @@ export default class App extends React.Component {
           inject={{
             classes: () => ClassStore.getState().classes
           }}>
-          <Classes />
+          <Classes onEdit={this.editClass} onDelete={this.deleteClass}/>
         </AltContainer>
       </div>
     );
   }
   addClass() {
     ClassActions.create({name: 'New class'});
+  }
+  editClass(id, name) {
+    ClassActions.update({id, name});
+  }
+  deleteClass(id, name) {
+    ClassActions.remove(id);
   }
 }
